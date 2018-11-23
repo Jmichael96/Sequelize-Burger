@@ -1,0 +1,67 @@
+<div class="row">
+	{{!-- image column --}}
+	<div class="col-4 text-center">
+		<img src="https://media.giphy.com/media/3o7btUFzd7vU3bYZFK/giphy.gif" id="imageData" width="400px" height="350px" />
+	</div>
+	<!-- wrapper -->
+	<div class="wrapper  col-7">
+
+		{{!-- add burger section --}}
+		<div class="row justify-content-center">
+			<div class="col-12 text-center">
+				<h1>ADD BURGER</h1>
+				<form class="create-update-form" action="burgers/create" method="POST">
+
+					<div class="form-group">
+						<label for="burger">Burger Name:</label>
+						<input type="text" id="burger" name="name">
+						<button id="submit-btn" type="submit" class="btn">Add Burger</button>
+
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<!-- column 1 - TASTY BURGERS -->
+				<div class="col-6 text-center">
+					<h1 class="text-center">EAT-DA-BURGER!</h1>
+					{{!-- ordered list --}}
+					<ol>
+						{{!-- iterating through burgers and selecting the ones that have not been devoured --}} {{#each burgers}} {{#unless this.devoured}}
+						<li>
+							<h3>
+								{{!-- calling burger name --}} {{this.burger_name}}
+								<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+									<input type="hidden" name="devoured" value="true">
+									<button type="submit" class="btn btn-primary">Devour it!</button>
+								</form>
+							</h3>
+						</li>
+						{{/unless}} {{/each}}
+					</ol>
+				</div>
+				<!-- end column 1 -->
+
+				<!-- column 2 - DEVOURED BURGERS -->
+				<div class="col-6 text-center">
+
+					<h1>DEVOURED BURGERS!</h1>
+					{{!-- ordered list --}}
+					<ol>
+						{{!-- iterates through burgers --}} {{#each burgers}} {{#if this.devoured}}
+						<li>
+							<h3>
+								{{this.burger_name}} {{> burgers/delete-burger}}
+								<h3>
+						</li>
+						{{/if}} {{/each}}
+					</ol>
+					<!-- end column 2 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end wrapper -->
+</div>
