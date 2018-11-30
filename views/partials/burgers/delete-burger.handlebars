@@ -1,4 +1,7 @@
-{{!-- delete action for burgers --}}
-<form action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
-    <button type="submit" class="btn btn-primary">Digest!</button>
-</form>
+<li>
+    {{burgername}}
+
+    <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+        {{#unless devoured}}Devour Me!{{/unless}}
+    </button>
+</li>
