@@ -4,7 +4,7 @@ $(document).ready(function(){
 
         var burgerData = {
             burger_id: $(this).children('.burger-id').val(),
-            customer: $(this).children('.customer-name').valI() || 'Default'
+            customer: $(this).children('.customer-name').val() || 'Default'
         };
 
         $.ajax({
