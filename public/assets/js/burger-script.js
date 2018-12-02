@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.devour-input').on('submit', function(event){
+    $('.eat-form').on('submit', function(event){
         event.preventDefault();
 
         var burgerData = {

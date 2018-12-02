@@ -8,16 +8,13 @@
 
 		{{!-- add burger section --}}
 		<div class="row justify-content-center">
-			<div class="col-12 text-center">
+			<div class="col-6 text-center">
 				<h1>ADD BURGER</h1>
-				<form class="create-update-form" action="burgers/create" method="POST">
-
-					<div class="form-group">
-						<label for="burger">Burger Name:</label>
-						<input type="text" id="burger" name="name">
-						<button id="submit-btn" type="submit" class="btn">Add Burger</button>
-					</div>
+				<form action="/burgers/create" method="POST">
+					<input type="text" class="form-control" name="burger_name" value="" id="enter_text">
+					<button type="submit" class="btn btn-primary" id="text-enter-button">ADD BURGER</button>
 				</form>
+
 			</div>
 		</div>
 
@@ -27,20 +24,23 @@
 				<div class="col-6 text-center">
 					<h1 class="text-center">EAT-DA-BURGER!</h1>
 					{{!-- ordered list --}}
-					<ul>
-						{{#each burger}} 
+					<ol>
+						{{#each burgers}} 
 						{{#unless this.devoured}}
 						<li>
-								{{this.burger_name}}
+							<h3>{{this.burger_name}}</h3>
 
-								<form class="devour-input">
-									<input class="burger-id" type="hidden" name="devoured" value={{this.id}}>
-									<input class="customer-name" type="text" placeholder="Enter Name">
-									<button type="submit" class="btn btn-primary">Devour it!</button>
-								</form>
+							<form class="eat-form">
+								<input type="hidden" type="text" class="burger-id" value={{this.id}}>
+
+								<input class="customer-name mt-2" type="text" placeholder="Enter your name">
+								<br>
+
+								<button type="submit" class="btn-primary mt-2 btn">Click here to devour!</button>
+							</form>
 						</li>
 						{{/unless}} {{/each}}
-					</ul>
+					</ol>
 				</div>
 				<!-- end column 1 -->
 
@@ -49,18 +49,16 @@
 
 					<h1>DEVOURED BURGERS!</h1>
 					{{!-- ordered list --}}
-					<ul>
-						{{!-- iterates through burgers --}} {{#each burgers}} {{#if this.devoured}} {{#if this.Customer.customer}}
-						<li>
-							<h3>
-								{{this.burger_name}}
-								<span>(Devoured By:{{this.Customer.customer}})</span>
-								<h3>
-						</li>
-						{{/if}} 
-						{{/if}}
-						{{/each}}
-					</ul>
+			<ol>
+				{{#each burgers}}
+				{{#if this.devoured}}	
+				{{#if this.Customer.customer}}
+				<li> <h3>{{this.burger_name}}</h3> <span>(Devoured by {{this.Customer.customer}})</span></li>
+				{{/if}}
+				{{/if}}
+				{{/each}}	
+						
+			</ol>
 					<!-- end column 2 -->
 				</div>
 			</div>
