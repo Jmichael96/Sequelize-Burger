@@ -18,6 +18,7 @@
     "password": "ia2f080bouu2lell",
     "database": "srm2sb6c57r4q7p8",
     "host": "vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "mysql://au7i0s2lg1yke4u9:ia2f080bouu2lell@vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/srm2sb6c57r4q7p8"
   }
 }
