@@ -1,6 +1,6 @@
 # Eat-Da-Burger
 ![Here](https://media.giphy.com/media/3o7btUFzd7vU3bYZFK/giphy.gif)
-[LIVE LINK](https://stormy-forest-70452.herokuapp.com/)
+[LIVE LINK](https://sequelized-burger-jvh.herokuapp.com/)
 
 ## ABOUT
 This application is used to create a burger of your choice, then display it in the section "Eat-Da-Burger".
