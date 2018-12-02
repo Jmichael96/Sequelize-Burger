@@ -4,8 +4,7 @@
 
 ## ABOUT
 This application is remake of the first Burger project "https://bobs-burgers-jvh.herokuapp.com/" that allows the user to create a burger of thier choice, then display it in the section "Eat-Da-Burger".
-If the devour button is clicked it is updated and moved to the "Devoured Burgers" section.
-Once the Digest button is clicked, the burger will then be deleted and you can start the process over!
+Input the customers name in the input box and click the devour button. Once clicked, the name of the burger as well as the name as the customer that ate the burger is rendered to the devoured section.
 ![capture](https://user-images.githubusercontent.com/40511023/49335384-25164380-f5b2-11e8-90a8-16d64045444f.PNG)
 
 
